@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-  <div class="col-3">
+  <div class="col-2">
     <div class="card mb-3">
       <div class="image">
         <div v-if="image === null" class="poster">

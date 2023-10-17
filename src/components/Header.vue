@@ -1,10 +1,12 @@
 <script>
 import SearchBar from './partials/SearchBar.vue';
+import Reset from './partials/Reset.vue';
 
 export default {
   name:"Header",
   components:{
-    SearchBar
+    SearchBar,
+    Reset
   }
 }
 </script>
@@ -14,6 +16,7 @@ export default {
   <div class="container">
     <div class="logo">
       <img src="/public/logo-boolflix.png" alt="">
+      <Reset />
     </div> 
     <SearchBar />
   </div>
@@ -35,6 +38,8 @@ header{
     align-items: center;
     .logo{
     max-width: 140px;
+    display: flex;
+    align-items: center;
 
       img{
         width: 100%;

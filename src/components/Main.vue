@@ -1,11 +1,13 @@
 <script>
 import Card from './partials/Card.vue';
 import { store } from '../data/store';
+import RecentShows from './partials/RecentShows.vue';
 
 export default {
   name:"Main",
   components:{
-    Card
+    Card,
+    RecentShows
   },
   data(){
     return{
@@ -24,7 +26,7 @@ export default {
       <Card v-for="serie in store.tvArr" :key="serie.id" :originalTitle="serie.original_name" :language="serie.original_language" :vote="serie.vote_average" :image="serie.poster_path" />
     </div>
     <div v-else class="row text">
-      <p>Nessun risultato trovato</p>
+      <RecentShows />
     </div>
   </div>
 </template>

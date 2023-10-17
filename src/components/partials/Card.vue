@@ -18,7 +18,7 @@ export default {
   }, 
   methods:{
     voteInt(vote){
-      return this.voteRounded = Math.round(vote);
+      return this.voteRounded = Math.round(vote / 2);
     }
   },
   mounted(){
@@ -58,35 +58,35 @@ export default {
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </span>
-              <span v-else-if="voteRounded == 1 || voteRounded == 2">
+              <span v-else-if="voteRounded == 1">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </span>
-              <span v-else-if="voteRounded == 3 || voteRounded == 4">
+              <span v-else-if="voteRounded == 2">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </span>
-              <span v-else-if="voteRounded == 5 || voteRounded == 6">
+              <span v-else-if="voteRounded == 3">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </span>
-              <span v-else-if="voteRounded == 7 || voteRounded == 8">
+              <span v-else-if="voteRounded == 4"> 
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-regular fa-star"></i>
               </span>
-              <span v-else-if="voteRounded == 9 || voteRounded == 10">
+              <span v-else-if="voteRounded == 5">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -106,6 +106,7 @@ export default {
 .card{
   background-color: $background-main;
   position: relative;
+
   .image{
     width: 100%;
     height: 300px;

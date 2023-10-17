@@ -22,7 +22,12 @@ export default {
   <div class="col-3">
     <div class="card mb-3">
       <div class="image">
-        <img :src="'https://image.tmdb.org/t/p/w780' + image" class="card-img-top" alt="...">
+        <div v-if="image === null" class="poster">
+          <img src="../../../public/No-Image-Placeholder.svg.png" class="card-img-top" alt="image">
+        </div>
+        <div v-else class="poster">
+          <img :src="'https://image.tmdb.org/t/p/w780' + image" class="card-img-top" alt="image">
+        </div>
         <div class="card-body">
           <ul>
             <li>{{ title }}</li>
@@ -60,12 +65,17 @@ export default {
         display: block;
       }
     }
-    
-    img{
+    .poster{
       height: 100%;
       width: 100%;
-      border-radius: 5px;
+
+      img{
+        height: 100%;
+        width: 100%;
+        border-radius: 5px;
+      }
     }
+      
     .card-body{
       display: none;
       width: 100%;

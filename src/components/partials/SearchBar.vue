@@ -42,13 +42,13 @@ export default {
     },
     MovieOrTv(){
       if(store.selectToSearch === "Serie TV"){
+        console.log("serie tv");
         store.movieArr = [];
-        console.log("serie tv")
         this.getApiTv();
       }else if(store.selectToSearch === "Film"){
+        console.log("film");
         store.tvArr = [];
-        this.getApiMovie()
-        console.log("film")
+        this.getApiMovie();
       }
     }
   }

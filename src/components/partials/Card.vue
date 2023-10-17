@@ -5,7 +5,8 @@ export default {
   name:"Card",
   data(){
     return{
-      store
+      store,
+      voteRounded: 0
     }
   },
   props:{
@@ -14,6 +15,14 @@ export default {
     language: String,
     vote: Number,
     image: String
+  }, 
+  methods:{
+    voteInt(vote){
+      return this.voteRounded = Math.round(vote);
+    }
+  },
+  mounted(){
+    this.voteInt(this.vote)
   }
 }
 </script>
@@ -41,7 +50,50 @@ export default {
             <li v-else>
               {{ language }}
             </li>
-            <li>{{ vote }}</li>
+            <li>
+              <span v-if="voteRounded == 0">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span v-else-if="voteRounded == 1 || voteRounded == 2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span v-else-if="voteRounded == 3 || voteRounded == 4">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span v-else-if="voteRounded == 5 || voteRounded == 6">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span v-else-if="voteRounded == 7 || voteRounded == 8">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span v-else-if="voteRounded == 9 || voteRounded == 10">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+            </li>
           </ul>
         </div>
       </div>

@@ -24,13 +24,15 @@ export default {
       <div class="mx-2 user">
         <i class="fa-regular fa-face-smile"></i>
       </div>
-      <i class="fa-solid fa-chevron-down ms-2" data-bs-toggle="dropdown" aria-expanded="false"></i>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Gestisci profili</a></li>
-        <li><a class="dropdown-item" href="#">Trasferisci profilo</a></li>
-        <li><a class="dropdown-item" href="#">Account</a></li>
-        <li><a class="dropdown-item" href="#">Centro assistenza</a></li>
-      </ul>
+      <div class="dropdown">
+        <i class="fa-solid fa-chevron-down ms-2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Gestisci profili</a></li>
+          <li><a class="dropdown-item" href="#">Trasferisci profilo</a></li>
+          <li><a class="dropdown-item" href="#">Account</a></li>
+          <li><a class="dropdown-item" href="#">Centro assistenza</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>
@@ -62,7 +64,7 @@ header{
     .profile{
       color: white;
       font-size: 1.2rem;
-      div{
+      .user{
         background-color: $background-user;
         border-radius: 5px;
         width: 40px;

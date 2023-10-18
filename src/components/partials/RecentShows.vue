@@ -54,12 +54,12 @@ export default {
   <div class="container">
     <div class="row">
       <p>I film dell'anno</p>
-      <Card v-for="show in store.recentMovies" :key="show.id" :title="show.title" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" />
+      <Card v-for="show in store.recentMovies" :key="show.id" :title="show.title" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" :overview="show.overview" />
     </div>
     
     <div class="row">
       <p>Le serie dell'anno</p>
-      <Card v-for="show in store.recentTv" :key="show.id" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" />
+      <Card v-for="show in store.recentTv" :key="show.id" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" :overview="show.overview" />
     </div>
     
   </div>

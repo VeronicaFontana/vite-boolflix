@@ -14,7 +14,8 @@ export default {
     originalTitle: String,
     language: String,
     vote: Number,
-    image: String
+    image: String,
+    overview: String
   }, 
   methods:{
     voteInt(vote){
@@ -38,22 +39,27 @@ export default {
           <img :src="'https://image.tmdb.org/t/p/w780' + image" class="card-img-top" alt="image">
         </div>
         <div class="card-body">
-          <ul>
-            <li>{{ title }}</li>
-            <li>{{ originalTitle }}</li>
-            <li v-if="language === 'en'">
-              <img src="/en.png" alt="">
-            </li>
-            <li v-else-if="language === 'it'">
-              <img src="/it.png" alt="">
-            </li>
-            <li v-else>
-              {{ language }}
-            </li>
-            <li>
-              <i v-for="i in 5" :key="i" class="fa-star" :class="(i <= voteRounded) ? 'fa-solid' : 'fa-regular'"></i>
-            </li>
-          </ul>
+          <div>
+            <ul>
+              <li>{{ title }}</li>
+              <li>{{ originalTitle }}</li>
+              <li v-if="language === 'en'">
+                <img src="/en.png" alt="">
+              </li>
+              <li v-else-if="language === 'it'">
+                <img src="/it.png" alt="">
+              </li>
+              <li v-else>
+                {{ language }}
+              </li>
+              <li>
+                <i v-for="i in 5" :key="i" class="fa-star" :class="(i <= voteRounded) ? 'fa-solid' : 'fa-regular'"></i>
+              </li>
+            </ul>
+          </div>
+          <div class="text">
+            <p>{{ overview }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -75,6 +81,7 @@ export default {
       transform: scale(1.1);
       .card-body{
         display: block;
+        height: 300px;
       }
     }
     .poster{
@@ -91,12 +98,13 @@ export default {
     .card-body{
       display: none;
       width: 100%;
-      height: 50%;
+      max-height: 300px;
       background-color: #14141499;
       color: white;
       position: absolute;
       bottom: 0;
       text-align: center;
+      padding: 10px 5px;
 
       ul{
         list-style: none;
@@ -105,10 +113,19 @@ export default {
         font-style: italic;
         font-weight: bold;
 
+        li{
+          margin: 10px 0;
+        }
+
         img{
           width: 25px;
           border-radius: 0px;
         }
+      }
+      .text{
+        max-height: 50%;
+        overflow-y: auto;
+        font-size: 0.7rem;
       }
     }
   }

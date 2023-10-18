@@ -10,5 +10,6 @@ export const store = reactive({
   apiUrlMovieDiscover: "https://api.themoviedb.org/3/discover/movie",
   apiUrlTvDiscover: "https://api.themoviedb.org/3/discover/tv",
   recentMovies: [],
-  recentTv: []
+  recentTv: [],
+  show: false
 })

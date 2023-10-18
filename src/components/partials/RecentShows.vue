@@ -58,7 +58,7 @@ export default {
   <div class="container">
     <div class="row mb-5">
       <div class="d-flex justify-content-between">
-        <p>I film dell'anno</p>
+        <p>Film</p>
         <SelectMovieGenreVue />
       </div>
       <Card v-for="show in store.recentMovies" :key="show.id" :title="show.title" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" :overview="show.overview" />
@@ -66,7 +66,7 @@ export default {
     
     <div class="row">
       <div class="d-flex justify-content-between">
-        <p>Le serie dell'anno</p>
+        <p>Serie TV</p>
         <SelectTvGenreVue /> 
       </div>
       

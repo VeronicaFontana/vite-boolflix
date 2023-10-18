@@ -24,11 +24,11 @@ export default {
       })
     },
     getMovieByGenres(){
-      axios.get(store.apiUrlMovieDiscover,{
+      axios.get(store.apiUrlMovie,{
         params:{
           api_key: "d54e8cd5bcb7276ad3bc697b09ba5d22",
-          query: store.movieGenreToSearch,
-          query: 2023
+          query: 2023,
+          query: store.movieGenreToSearch
         }
       })
       .then((resp)=>{

@@ -71,6 +71,9 @@ export default {
 .card{
   background-color: $background-main;
   position: relative;
+  &:hover{
+    cursor: pointer;
+  }
 
   .image{
     width: 100%;

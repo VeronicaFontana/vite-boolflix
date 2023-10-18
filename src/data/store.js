@@ -11,5 +11,10 @@ export const store = reactive({
   apiUrlTvDiscover: "https://api.themoviedb.org/3/discover/tv",
   recentMovies: [],
   recentTv: [],
-  show: false
+  show: false,
+  genreToSearch: [],
+  genreMovieArr:[],
+  genreTvArr:[],
+  apiUrlMovieGenres: "https://api.themoviedb.org/3/genre/movie/list",
+  apiUrlTvGenres: "https://api.themoviedb.org/3/genre/tv/list"
 })

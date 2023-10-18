@@ -19,6 +19,19 @@ export default {
       <Reset />
     </div> 
     <SearchBar />
+    <div class="d-flex align-items-center profile">
+      <i class="fa-regular fa-bell"></i>
+      <div class="mx-2 user">
+        <i class="fa-regular fa-face-smile"></i>
+      </div>
+      <i class="fa-solid fa-chevron-down ms-2" data-bs-toggle="dropdown" aria-expanded="false"></i>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Gestisci profili</a></li>
+        <li><a class="dropdown-item" href="#">Trasferisci profilo</a></li>
+        <li><a class="dropdown-item" href="#">Account</a></li>
+        <li><a class="dropdown-item" href="#">Centro assistenza</a></li>
+      </ul>
+    </div>
   </div>
 </header>
 </template>
@@ -44,6 +57,18 @@ header{
       img{
         width: 100%;
         height: 100%;
+      }
+    }
+    .profile{
+      color: white;
+      font-size: 1.2rem;
+      div{
+        background-color: $background-user;
+        border-radius: 5px;
+        width: 40px;
+        height: 35px;
+        text-align: center;
+        padding: 3px 0;
       }
     }
   }

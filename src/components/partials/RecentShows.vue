@@ -2,11 +2,15 @@
 import axios from 'axios';
 import { store } from '../../data/store';
 import Card from './Card.vue';
+import SelectMovieGenreVue from './SelectMovieGenre.vue';
+import SelectTvGenreVue from './SelectTvGenre.vue';
 
 export default {
   name:"RecentShows",
   components:{
-    Card
+    Card,
+    SelectMovieGenreVue,
+    SelectTvGenreVue
   },
   data(){
     return{
@@ -52,13 +56,20 @@ export default {
 
 <template>
   <div class="container">
-    <div class="row">
-      <p>I film dell'anno</p>
+    <div class="row mb-5">
+      <div class="d-flex justify-content-between">
+        <p>I film dell'anno</p>
+        <SelectMovieGenreVue />
+      </div>
       <Card v-for="show in store.recentMovies" :key="show.id" :title="show.title" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" :overview="show.overview" />
     </div>
     
     <div class="row">
-      <p>Le serie dell'anno</p>
+      <div class="d-flex justify-content-between">
+        <p>Le serie dell'anno</p>
+        <SelectTvGenreVue /> 
+      </div>
+      
       <Card v-for="show in store.recentTv" :key="show.id" :originalTitle="show.original_name" :language="show.original_language" :vote="show.vote_average" :image="show.poster_path" :overview="show.overview" />
     </div>
     

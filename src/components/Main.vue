@@ -2,12 +2,16 @@
 import Card from './partials/Card.vue';
 import { store } from '../data/store';
 import RecentShows from './partials/RecentShows.vue';
+import SelectMovieGenre from './partials/SelectMovieGenre.vue';
+import SelectTvGenreVue from './partials/SelectTvGenre.vue';
 
 export default {
   name:"Main",
   components:{
     Card,
-    RecentShows
+    RecentShows,
+    SelectMovieGenre,
+    SelectTvGenreVue
   },
   data(){
     return{
@@ -20,9 +24,14 @@ export default {
 <template>
   <div class="container my-3">
     <div v-if="store.movieArr.length > 0" class="row">
+      <SelectMovieGenre />
       <Card v-for="movie in store.movieArr" :key="movie.id" :title="movie.title" :originalTitle="movie.original_title" :language="movie.original_language" :vote="movie.vote_average" :image="movie.poster_path" :overview="movie.overview" />
     </div>
+    
     <div v-else-if="store.tvArr.length > 0" class="row">
+      <div class="select">
+        <SelectTvGenreVue />
+      </div>
       <Card v-for="serie in store.tvArr" :key="serie.id" :originalTitle="serie.original_name" :language="serie.original_language" :vote="serie.vote_average" :image="serie.poster_path" :overview="serie.overview" />
     </div>
     <div v-else class="row text">
@@ -35,6 +44,9 @@ export default {
 @use "../scss/partials/variables" as *;
 
 .container{
+  .select{
+    margin-bottom: 10px;
+  }
   .text{
     color: white;
     text-transform: uppercase;

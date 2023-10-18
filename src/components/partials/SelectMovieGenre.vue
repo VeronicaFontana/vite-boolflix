@@ -22,6 +22,21 @@ export default {
       .catch((error)=>{
         console.log("error")
       })
+    },
+    getMovieByGenres(){
+      axios.get(store.apiUrlMovieDiscover,{
+        params:{
+          api_key: "d54e8cd5bcb7276ad3bc697b09ba5d22",
+          query: store.movieGenreToSearch,
+          query: 2023
+        }
+      })
+      .then((resp)=>{
+        store.recentMovies = resp.data.results
+      })
+      .catch((error)=>{
+        console.log("error")
+      })
     }
   },
   mounted(){
@@ -31,12 +46,18 @@ export default {
 </script>
 
 <template>
-  <div>
-    <select class="form-select" aria-label="Default select example">
-      <option selected value="">Genere</option>
-      <option v-for="genre in store.genreMovieArr" :key="genre.id" :value="genre.name">{{ genre.name }}</option>
-    </select>
+  <div class="d-flex align-items-center">
+    <div class="me-2">
+      <select v-model="store.movieGenreToSearch" class="form-select" aria-label="Default select example">
+        <option selected value="">Genere</option>
+        <option v-for="genre in store.genreMovieArr" :key="genre.id" :value="genre.name">{{ genre.name }}</option>
+      </select>
+    </div>
+    <div>
+      <button @click="getMovieByGenres()">Search</button>
+    </div>
   </div>
+  
 </template>
 
 <style>

@@ -46,6 +46,7 @@ header{
   background-color: $background-header;
 
   .container{
+    max-width: 1500px;
     padding: 0;
     height: 100%;
     display: flex;

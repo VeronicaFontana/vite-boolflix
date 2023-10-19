@@ -36,6 +36,7 @@ export default {
 @use "../scss/partials/variables" as *;
 
 .container{
+  max-width: 1500px;
   .select{
     margin-bottom: 10px;
   }
